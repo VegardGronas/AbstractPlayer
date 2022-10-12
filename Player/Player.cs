@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -94,7 +93,7 @@ public abstract class Player : MonoBehaviour
     //Animtion controller 
     public void SetAnimations()
     {
-        float blendStndard = math.lerp(anim.GetFloat(playerAnimations.standardBlends), RoundNumber(movement.vertical), playerAnimations.standardBlendSpeed * Time.deltaTime);
+        float blendStndard = Mathf.Lerp(anim.GetFloat(playerAnimations.standardBlends), RoundNumber(movement.vertical), playerAnimations.standardBlendSpeed * Time.deltaTime);
         anim.SetFloat(playerAnimations.standardBlends, blendStndard);
         anim.SetInteger(playerAnimations.danceAnims, playerAnimations.currentDance);
     }

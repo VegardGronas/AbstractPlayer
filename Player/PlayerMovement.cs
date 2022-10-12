@@ -17,6 +17,9 @@ public class PlayerMovement : ManagePlayerInputs
 
     private void FixedUpdate()
     {
-        PhysicsMove();
+        if (settings.usingPhysics)
+        {
+            PhysicsMove();
+        }
     }
 }
